@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Boilerplate.Libraries.Data\Boilerplate.Libraries.Data.csproj" />
+    <ProjectReference Include="..\Boilerplate.Libraries.Repositories\Boilerplate.Libraries.Repositories.csproj" />
+    <ProjectReference Include="..\Boilerplate.Libraries.Services\Boilerplate.Libraries.Services.csproj" />
+  </ItemGroup>
+
+</Project>
