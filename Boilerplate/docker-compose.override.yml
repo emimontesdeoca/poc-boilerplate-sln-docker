@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  boilerplate.applications.todoblazor:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

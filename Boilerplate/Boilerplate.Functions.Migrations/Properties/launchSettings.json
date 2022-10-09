@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Boilerplate.Functions.Migrations": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

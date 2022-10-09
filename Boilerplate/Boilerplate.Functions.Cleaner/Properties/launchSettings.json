@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Boilerplate.Functions.Cleaner": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

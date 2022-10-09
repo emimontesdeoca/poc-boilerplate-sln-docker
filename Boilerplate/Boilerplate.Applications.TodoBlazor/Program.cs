@@ -1,5 +1,6 @@
-using Boilerplate.Applications.TodoBlazor.Data;
 using Boilerplate.Libraries.Data;
+using Boilerplate.Libraries.Repositories;
+using Boilerplate.Libraries.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +12,10 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddDbContext<Context>(
-        options => options.UseSqlServer("Server=.;Database=Toshokan;Trusted_Connection=True;"), ServiceLifetime.Transient);
+        options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddBoilerplateRepositories();
+builder.Services.AddBoilerplateServices();
 
 var app = builder.Build();
 

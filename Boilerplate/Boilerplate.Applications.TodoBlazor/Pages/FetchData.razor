@@ -2,14 +2,12 @@
 
 <PageTitle>Weather forecast</PageTitle>
 
-@using Boilerplate.Applications.TodoBlazor.Data
-@inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (TodoService == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -18,31 +16,22 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Text</th>
+                <th>Done</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var todo in Todos)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@todo.Text</td>
+                    <td>@todo.Done</td>
+                    <td><button class="btn btn-primary">Action</button></td>
                 </tr>
             }
         </tbody>
     </table>
 }
 
-@code {
-    private WeatherForecast[]? forecasts;
 
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-}

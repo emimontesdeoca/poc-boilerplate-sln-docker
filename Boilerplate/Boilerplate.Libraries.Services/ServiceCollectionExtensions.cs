@@ -10,9 +10,9 @@ namespace Boilerplate.Libraries.Services
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddBoilerplateServices(this IServiceCollection services)
         {
-            services.AddSingleton<TodoService>();
+            services.AddTransient<TodoService>();
 
             return services;
         }

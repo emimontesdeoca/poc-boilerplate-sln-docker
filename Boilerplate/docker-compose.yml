@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  boilerplate.applications.todoblazor:
+    image: ${DOCKER_REGISTRY-}boilerplateapplicationstodoblazor
+    build:
+      context: .
+      dockerfile: Boilerplate.Applications.TodoBlazor/Dockerfile
+
+  boilerplate.functions.cleaner:
+    image: ${DOCKER_REGISTRY-}boilerplatefunctionscleaner
+    build:
+      context: .
+      dockerfile: Boilerplate.Functions.Cleaner/Dockerfile
+
+  boilerplate.functions.migrations:
+    image: ${DOCKER_REGISTRY-}boilerplatefunctionsmigrations
+    build:
+      context: .
+      dockerfile: Boilerplate.Functions.Migrations/Dockerfile
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "S3cur3P@ssW0rd!"
+      ACCEPT_EULA: "Y"
